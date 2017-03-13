@@ -1,29 +1,19 @@
-(function() {
-
-  var redBtn = document.getElementById('red-button');
-  var blueBtn = document.getElementById('blue-button');
-  var yellowBtn = document.getElementById('yellow-button');
-  var body = document.querySelector('body');
-
-  function httpGetRequest(colour) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        body.style.backgroundColor = colour;
-      }
-    };
-    xhr.open('GET', '/', true);
-    xhr.send();
+function fetch(color) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      document.body.style.backgroundColor = color;
+    }
   };
+  xhr.send();
+}
 
-  redBtn.addEventListener('click', function() {
-    httpGetRequest('red');
-  });
-  blueBtn.addEventListener('click', function() {
-    httpGetRequest('blue');
-  });
-  yellowBtn.addEventListener('click', function () {
-    httpGetRequest('yellow');
-  });
+var buttonsDOM = document.querySelector('.buttons');
+buttonsDOM.addEventListener('click', handleButtonClick);
 
-})();
+function handleButtonClick(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    fetch(event.target.id.split('-')[0]);
+  }
+}

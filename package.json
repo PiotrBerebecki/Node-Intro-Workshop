@@ -1,0 +1,23 @@
+{
+  "name": "node-intro-workshop",
+  "version": "1.0.0",
+  "description": "### Introduction",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiotrBerebecki/Node-Intro-Workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PiotrBerebecki/Node-Intro-Workshop/issues"
+  },
+  "homepage": "https://github.com/PiotrBerebecki/Node-Intro-Workshop#readme",
+  "dependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
